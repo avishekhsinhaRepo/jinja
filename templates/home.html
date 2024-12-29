@@ -1,0 +1,21 @@
+{%extends "base.html"%}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+{% import "table.jinja2" as table_macros %}
+
+<h1>Todos</h1>
+{% set headers = ["Name", "Age", "Occupation"] %}
+{% set rows = [["Alice", 30, "Engineer"], ["Bob", 25, "Designer"]] %}
+
+{{ table_macros.render_table(headers, rows) }}
+
+<p>Currency : {{11.37| format_currency('$')}}</p>
+
+{% set num_todos = todos| length %}
+<ul>
+    {% for todotxt, status in todos %}
+        <li>{% if status =="completed" %} <b>[X]</b> {% else %}  <b>[]</b> {%endif%} {{ todotxt }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

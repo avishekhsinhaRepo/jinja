@@ -1,0 +1,16 @@
+{% macro render_table(header, rows) %}
+<table>
+    <tr>
+        {% for head in header %}
+            <th>{{ head }}</th>
+        {% endfor %}
+    </tr>
+    {% for row in rows %}
+        <tr>
+            {% for col in row %}
+                <td>{{ col }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+{% endmacro %}

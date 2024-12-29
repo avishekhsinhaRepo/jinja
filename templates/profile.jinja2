@@ -1,0 +1,15 @@
+{% macro studentprofile(student) %}
+    <div class="student">
+
+           {% for studentInfo in student %}
+              <tr>
+                <td>{{studentInfo['id']}}</td>
+                <td>{{studentInfo['name']}}</td>
+                  <td>{{studentInfo['age']}}</td>
+                    <td>{{studentInfo['address']}}</td>
+                      <td>{{studentInfo['marks']}}</td>
+              </tr>
+           {% endfor %}
+       </table>
+    </div>
+{% endmacro %}

@@ -1,0 +1,12 @@
+{% macro studentInfo(student) %}
+    <div class="student">
+
+           {% for studentInfo in student %}
+              <tr>
+                <td>{{studentInfo['id']}}</td>
+                <td>{{studentInfo['name']}}</td>
+              </tr>
+           {% endfor %}
+       </table>
+    </div>
+{% endmacro %}
